@@ -1,5 +1,5 @@
 import { Item } from '../../types';
-import { Edit2, Trash2, Clock } from 'lucide-react';
+import { CreditCard as Edit2, Trash2, Clock } from 'lucide-react';
 
 interface MasonryLayoutProps {
   items: Item[];
