@@ -1,5 +1,5 @@
 import { Item } from '../../types';
-import { CreditCard as Edit2, Trash2 } from 'lucide-react';
+import { Edit2, Trash2 } from 'lucide-react';
 
 interface TableLayoutProps {
   items: Item[];
@@ -9,7 +9,7 @@ interface TableLayoutProps {
 
 export default function TableLayout({ items, onEdit, onDelete }: TableLayoutProps) {
   return (
-    <div className="glass-morphism shimmer-effect rounded-3xl shadow-2xl overflow-hidden">
+    <div className="glass-morphism rounded-3xl shadow-2xl overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>

@@ -1,5 +1,5 @@
 import { Item } from '../../types';
-import { CreditCard as Edit2, Trash2, Circle } from 'lucide-react';
+import { Edit2, Trash2, Circle } from 'lucide-react';
 
 interface TimelineLayoutProps {
   items: Item[];
@@ -24,7 +24,7 @@ export default function TimelineLayout({ items, onEdit, onDelete }: TimelineLayo
               <Circle className="w-full h-full text-white p-0.5" fill="currentColor" />
             </div>
 
-            <div className="glass-morphism shimmer-effect rounded-3xl shadow-2xl p-8 transform transition-all duration-300 hover:scale-[1.01] hover:shadow-3xl">
+            <div className="glass-morphism hover:shimmer-effect rounded-3xl shadow-2xl p-8 transform transition-all duration-300 hover:scale-[1.01] hover:shadow-3xl">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1 min-w-0">
                   <div className="text-sm font-medium text-blue-600 dark:text-blue-400 mb-2">

@@ -1,5 +1,5 @@
 import { Item } from '../../types';
-import { CreditCard as Edit2, Trash2, Calendar } from 'lucide-react';
+import { Edit2, Trash2, Calendar } from 'lucide-react';
 
 interface CompactLayoutProps {
   items: Item[];
@@ -14,7 +14,7 @@ export default function CompactLayout({ items, onEdit, onDelete }: CompactLayout
         <div
           key={item.id}
           id={`item-${item.id}`}
-          className="glass-morphism shimmer-effect rounded-2xl shadow-lg p-5 transform transition-all duration-300 hover:shadow-2xl animate-slideUp"
+          className="glass-morphism hover:shimmer-effect rounded-2xl shadow-lg p-5 transform transition-all duration-300 hover:shadow-2xl animate-slideUp"
           style={{ animationDelay: `${index * 30}ms` }}
         >
           <div className="flex items-center gap-4">

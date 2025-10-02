@@ -22,7 +22,7 @@ export default function CrudApp() {
   });
   const [currentLayout, setCurrentLayout] = useState<LayoutType>(() => {
     const saved = localStorage.getItem('layoutType');
-    return (saved as LayoutType) || 'classic';
+    return (saved as LayoutType) || 'timeline';
   });
   const [showLayoutMenu, setShowLayoutMenu] = useState(false);
 
@@ -152,20 +152,28 @@ export default function CrudApp() {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-10">
           <div>
-            <h1 className="text-5xl font-bold text-slate-900 dark:text-white mb-2">
+            <h1 className="text-5xl font-bold text-slate-900 dark:text-white mb-2 shimmer-effect">
               Frosted Data v2
             </h1>
             <p className="text-slate-600 dark:text-slate-400 text-lg">
               Manage your collection beautifully
             </p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-3 items-center">
+            <button
+              onClick={() => setShowForm(true)}
+              className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+            >
+              <Plus className="w-4 h-4" />
+              New Item
+            </button>
+
             <div className="relative">
               <button
                 onClick={() => setShowLayoutMenu(!showLayoutMenu)}
-                className="flex items-center gap-2 px-5 py-3 glass-morphism shimmer-effect text-slate-700 dark:text-slate-300 rounded-2xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+                className="flex items-center gap-2 px-4 py-2.5 glass-morphism text-slate-700 dark:text-slate-300 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
               >
-                <Layout className="w-5 h-5" />
+                <Layout className="w-4 h-4" />
                 Layout
               </button>
 
@@ -198,32 +206,23 @@ export default function CrudApp() {
 
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="flex items-center gap-2 px-5 py-3 glass-morphism shimmer-effect text-slate-700 dark:text-slate-300 rounded-2xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+              className="p-2.5 glass-morphism text-slate-700 dark:text-slate-300 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
             >
-              {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
 
             <button
               onClick={handleSignOut}
-              className="flex items-center gap-2 px-5 py-3 glass-morphism shimmer-effect text-slate-700 dark:text-slate-300 rounded-2xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+              className="p-2.5 glass-morphism text-slate-700 dark:text-slate-300 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
             >
-              <LogOut className="w-5 h-5" />
-              Sign Out
+              <LogOut className="w-4 h-4" />
             </button>
           </div>
         </div>
 
-        <button
-          onClick={() => setShowForm(true)}
-          className="w-full mb-8 py-6 bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 text-white rounded-3xl font-semibold text-lg shadow-2xl hover:shadow-3xl shimmer-effect transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-3"
-        >
-          <Plus className="w-6 h-6" />
-          Create New Item
-        </button>
-
         {showForm && (
           <div className="fixed inset-0 bg-slate-900/40 dark:bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-6 z-50 animate-fadeIn">
-            <div className="glass-morphism shimmer-effect rounded-3xl shadow-2xl p-10 w-full max-w-2xl transform transition-all duration-300 scale-100 animate-slideUp">
+            <div className="glass-morphism rounded-3xl shadow-2xl p-10 w-full max-w-2xl transform transition-all duration-300 scale-100 animate-slideUp">
               <div className="flex items-center justify-between mb-8">
                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
                   {editingItem ? 'Edit Item' : 'New Item'}

@@ -1,5 +1,5 @@
 import { Item } from '../../types';
-import { CreditCard as Edit2, Trash2, Clock } from 'lucide-react';
+import { Edit2, Trash2, Clock } from 'lucide-react';
 
 interface MasonryLayoutProps {
   items: Item[];
@@ -14,7 +14,7 @@ export default function MasonryLayout({ items, onEdit, onDelete }: MasonryLayout
         <div
           key={item.id}
           id={`item-${item.id}`}
-          className="glass-morphism shimmer-effect rounded-3xl shadow-2xl p-6 break-inside-avoid transform transition-all duration-300 hover:scale-[1.02] animate-slideUp"
+          className="glass-morphism hover:shimmer-effect rounded-3xl shadow-2xl p-6 break-inside-avoid transform transition-all duration-300 hover:scale-[1.02] animate-slideUp"
           style={{ animationDelay: `${index * 40}ms` }}
         >
           <div className="flex items-start justify-between mb-3">
