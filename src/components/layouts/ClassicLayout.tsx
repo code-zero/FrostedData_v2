@@ -1,5 +1,5 @@
 import { Item } from '../../types';
-import { CreditCard as Edit2, Trash2 } from 'lucide-react';
+import { Pencil, Trash2 } from 'lucide-react';
 
 interface ClassicLayoutProps {
   items: Item[];
@@ -26,7 +26,7 @@ export default function ClassicLayout({ items, onEdit, onDelete }: ClassicLayout
                 onClick={() => onEdit(item)}
                 className="p-3 bg-blue-50 dark:bg-blue-900/30 hover:bg-blue-100 dark:hover:bg-blue-900/50 text-blue-600 dark:text-blue-400 rounded-2xl transition-all duration-200 hover:scale-110 active:scale-95"
               >
-                <Edit2 className="w-5 h-5" />
+                <Pencil className="w-5 h-5" />
               </button>
               <button
                 onClick={() => onDelete(item.id)}

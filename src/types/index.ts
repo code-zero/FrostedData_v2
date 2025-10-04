@@ -7,4 +7,4 @@ export interface Item {
   user_id?: string;
 }
 
-export type LayoutType = 'classic' | 'compact' | 'masonry' | 'table' | 'timeline';
+export type LayoutType = 'classic' | 'compact' | 'masonry' | 'table' | 'timeline' | 'floating';

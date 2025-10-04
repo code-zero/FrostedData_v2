@@ -1,5 +1,5 @@
 import { Item } from '../../types';
-import { CreditCard as Edit2, Trash2 } from 'lucide-react';
+import { Pencil, Trash2 } from 'lucide-react';
 
 interface TableLayoutProps {
   items: Item[];
@@ -61,7 +61,7 @@ export default function TableLayout({ items, onEdit, onDelete }: TableLayoutProp
                       onClick={() => onEdit(item)}
                       className="p-2 bg-blue-50 dark:bg-blue-900/30 hover:bg-blue-100 dark:hover:bg-blue-900/50 text-blue-600 dark:text-blue-400 rounded-xl transition-all duration-200 hover:scale-110 active:scale-95"
                     >
-                      <Edit2 className="w-4 h-4" />
+                      <Pencil className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => onDelete(item.id)}
